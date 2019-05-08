@@ -1,0 +1,29 @@
+.logo {
+    display: inline;
+}
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-family: Roboto;
+    display: inline;
+}
+
+.icon {
+    padding-right: 1em;
+}
+.headroom {
+    margin-bottom: 2em;
+}
+.toolbar {
+    padding: 2em;
+}
+
+.searchbox {
+    float:right;
+    width: 100%;
+}
+
+.search {
+    float: right;
+    width: 100%;
+}
