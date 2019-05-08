@@ -6,6 +6,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import { makeStyles } from '@material-ui/core/styles';
 import CardHeader from '@material-ui/core/CardHeader'
 
@@ -24,6 +25,9 @@ const useStyles = makeStyles(theme => ({
     float: 'right',
     padding: 0,
   },
+  subheader: {
+    color: 'black',
+  }
 }));
 
 
@@ -40,14 +44,21 @@ export default function ResourceHome() {
                 className={classes.header}
               title="Self-help library"
                 subheader="Search our library for resources and services"
+                classes={{
+                  subheader: classes.subheader,
+                }}
               />
           </Card>
           </CardActionArea>
 
           <div className={classes.search}>
           <List className={classes.list} >
-            <ListItem button>
+            <ListItem>
+              <ListItemIcon>
+
                 <SearchIcon />
+
+              </ListItemIcon>
               <ListItemText primary="Search all resources" />
             </ListItem>
 

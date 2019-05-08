@@ -34,7 +34,13 @@ const useStyles = makeStyles(theme => ({
   },
   wrapper: {
     marginBottom: '1em',
-  }
+  },
+  title: {
+    color: 'pink',
+  },
+  subheader: {
+    color: 'black',
+  },
 }));
 
 export default function App() {
@@ -48,9 +54,11 @@ export default function App() {
             <Card className={classes.navigator}>
               <CardHeader
                 className={classes.header}
-              title="Legal Help Navigator"
-
+                title="Legal Help Navigator"
                 subheader="Search our library for resources and services"
+                classes={{
+                  subheader: classes.subheader,
+                  }}
               />
               <CardContent>
                 <Navigator />

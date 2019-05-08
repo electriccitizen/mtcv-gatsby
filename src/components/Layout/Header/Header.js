@@ -12,6 +12,7 @@ import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
+import InputLabel from '@material-ui/core/InputLabel';
 const useStyles = makeStyles(theme => ({
   root: {
     padding: '2px 4px',
@@ -56,7 +57,8 @@ function Header(props) {
                   </Grid>
                   <Grid item xs={12} lg={6}>
                 <Paper className={classes.root}>
-                <InputBase className={classes.input} placeholder="Search by keyword" />
+                  <InputLabel htmlFor="foo">Search</InputLabel>
+                <InputBase id="foo" aria-label="Search FX" className={classes.input} placeholder="Search by keyword" />
                 <IconButton className={classes.iconButton} aria-label="Search">
                   <SearchIcon />
                 </IconButton>

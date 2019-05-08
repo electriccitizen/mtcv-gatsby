@@ -14,6 +14,10 @@ export default function TopLayout(props) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         />
+        <meta
+          name="description"
+          content="Montana Crime Victims"
+        />
       </Helmet>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
