@@ -149,7 +149,7 @@ class NavigationDrawer extends React.Component {
 
         return (
       <>
-      <IconButton className={classes.toggle} onClick={this.toggleDrawer('left', true)}><Icon path={mdiMenu} size={1.2} color="white"   /></IconButton>
+      <IconButton label="Open avigation" className={classes.toggle} onClick={this.toggleDrawer('left', true)}><Icon path={mdiMenu} size={1.2} color="white"   /></IconButton>
       <Drawer anchor="left" open={this.state.left} onClose={this.toggleDrawer('left', false)}>
           <div
             tabIndex={0}

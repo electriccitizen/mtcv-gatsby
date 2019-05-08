@@ -8,7 +8,8 @@ import theme from '../../src/theme';
 export default function TopLayout(props) {
   return (
     <React.Fragment>
-      <Helmet>
+      <Helmet defaultTitle="Montana Crime Victims">
+        <html lang="en" />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
