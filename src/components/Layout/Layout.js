@@ -7,6 +7,7 @@ import { StaticQuery, graphql } from "gatsby"
 import { withStyles } from '@material-ui/core/styles'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
+import 'typeface-roboto';
 
 const styles = theme => ({
   '@global': {

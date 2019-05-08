@@ -22,7 +22,8 @@
     "react-dom": "latest",
     "react-headroom": "^2.2.8",
     "react-helmet": "latest",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "typeface-roboto": "0.0.54"
   },
   "scripts": {
     "develop": "gatsby develop",
