@@ -3,19 +3,18 @@ import Typography from '@material-ui/core/Typography';
 import Layout from '../components/Layout/Layout'
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
 import CardActionArea from '@material-ui/core/CardActionArea'
 import ResourceHome from '../components/ResourceHome/ResourceHome';
 import Navigator from '../components/Navigator/Navigator';
 import { CardContent } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 
-import ChatIcon from '@material-ui/icons/Chat';
 import Link from '../components/Link';
-import Hero from '../components/Hero/Hero';
-import Teasers from '../components/Teasers/Teasers';
-const useStyles = makeStyles(theme => ({
 
+const useStyles = makeStyles(theme => ({
+  header: {
+    backgroundColor: 'Gainsboro',
+  },
   navigator: {
     backgroundColor: 'Cornsilk',
     marginBottom: '1em',
@@ -51,26 +50,20 @@ const useStyles = makeStyles(theme => ({
     height: 300,
     backgroundColor: "pink",
     display: 'block',
-  },
-  chat: {
-    fontSize: 80,
-    color: 'Gainsboro',
   }
 }));
 
-export default function App() {
-
+export default function Help() {
   const classes = useStyles();
-    return (
-      <Layout>
-        <Grid container spacing={6}>
-          <Grid item lg={12}>
-            <Hero />
-            <Navigator />
-            <Teasers />
-          </Grid>
-        </Grid>
-        <ChatIcon className={classes.chat} />
-      </Layout>
+  return (
+    <Layout>
+
+      <Navigator />
+
+
+
+
+
+    </Layout>
   );
 }

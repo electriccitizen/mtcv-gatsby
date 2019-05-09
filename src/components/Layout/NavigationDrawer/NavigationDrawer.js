@@ -10,6 +10,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import Icon from '@mdi/react'
+import { Link } from "gatsby"
 import Typography from '@material-ui/core/Typography';
 import { mdiMenu } from '@mdi/js'
 import { mdiEmoticonNeutralOutline } from '@mdi/js'
@@ -17,6 +18,7 @@ import { mdiEmoticonNeutralOutline } from '@mdi/js'
 const styles = {
   root: {
     fontSize: 10,
+    color: 'black',
   },
   highlight: {
     backgroundColor: 'Cornsilk',
@@ -88,17 +90,25 @@ class NavigationDrawer extends React.Component {
       <>
       <div className={classes.list}>
         <List className={classes.root} >
-          <ListItemLink href="library">
-            <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
-            <ListItemText primary="Self-help library" />
-          </ListItemLink>
+
           <ListItem button key={2}>
+            <Link to="/resources">
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
-            <ListItemText classes={{ primary: classes.buttontext }} >Self-help library</ListItemText>
+            </Link>
+            <Link to="/resources">
+            <ListItemText className={classes.link} primary="Self-help library" />
+          </Link>
+
           </ListItem>
-          <ListItem button key={2}>
+            <ListItem button key={2}>
+
+              <Link to="/help">
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
-            <ListItemText classes={{ primary: classes.buttontext }} >Legal help navigator</ListItemText>
+              </Link>
+
+              <Link to="/help">
+            <ListItemText className={classes.link} >Legal help navigator</ListItemText>
+              </Link>
           </ListItem>
 
 

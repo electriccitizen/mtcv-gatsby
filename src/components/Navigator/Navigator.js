@@ -12,12 +12,15 @@ import FormControl from '@material-ui/core/FormControl';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea'
 import { CardContent } from '@material-ui/core'
-
+import CardHeader from '@material-ui/core/CardHeader'
+import { Link } from "gatsby"
 const useStyles = makeStyles(theme => ({
   navigator: {
     minHeight: 200,
-    marginTop: '1em',
-
+    marginBottom: '4em',
+  },
+  header: {
+    backgroundColor: 'Gainsboro',
   },
 }));
 
@@ -27,10 +30,18 @@ function MadeWithLove() {
   const classes = useStyles();
   const [value] = React.useState('female');
   return (
-    <Container  maxWidth="sm">
+    <Container  maxWidth="md">
   <Box className={classes.navigator}>
     <CardActionArea>
+      <Link to="/help">
       <Card>
+        <CardHeader
+    className={classes.header}
+    title="Legal Help Navigator"
+    classes={{
+      subheader: classes.subheader,
+    }}
+  />
         <CardContent>
     <Typography variant="h6">
       Have you or somebody you know been the victim of a crime?
@@ -49,6 +60,7 @@ function MadeWithLove() {
     </FormControl>
         </CardContent>
       </Card>
+      </Link>
     </CardActionArea>
   </Box>
     </Container>

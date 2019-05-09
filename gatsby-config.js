@@ -38,13 +38,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
 
     // SOURCE DRUPAL
-    //{
-    //  resolve: 'gatsby-source-drupal',
-    //  options: {
-    //    baseUrl: 'http://dev-mtcv.pantheonsite.io/',
-    //    apiBase: 'jsonapi', // endpoint of Drupal server
-    //  },
-    //},
+    {
+      resolve: 'gatsby-source-drupal',
+      options: {
+        baseUrl: 'http://dev-mtcv.pantheonsite.io/',
+        apiBase: 'jsonapi', // endpoint of Drupal server
+      },
+    },
 
 
     // SOURCE FILESYSTEM (STATIC IMAGES)
