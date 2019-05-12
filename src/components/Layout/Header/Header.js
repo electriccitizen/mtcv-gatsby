@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Hidden from '@material-ui/core/Hidden';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -45,7 +46,14 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     marginRight: 12,
+  },
+  mobilenav: {
+    textAlign: 'right',
+    width: '100%',
+    paddingTop: '1em',
+    paddingRight: '.5em'
   }
+
 }));
 
 
@@ -54,7 +62,7 @@ function Header(props) {
   return (
       <Headroom className={styles.headroom}>
           <AppBar position="static" color="primary">
-              <Toolbar className={styles.toolbar}>
+            <Toolbar className={styles.toolbar}>
                 <Grid container spacing={0}>
                   <Grid item xs={12} lg={6}>
                   <NavigationDrawer />
@@ -65,15 +73,24 @@ function Header(props) {
                   <Grid item xs={12} lg={6}>
                  </Grid>
                 </Grid>
-                <Button variant="contained" className={classes.button}>
+                <Hidden only={['xs']}>
+                  <Button variant="contained" className={classes.button}>
                   <SearchIcon className={classes.rightIcon} />
                   Search
-                </Button>
-                   <Escape/>
-
+                  </Button>
+                  <Escape/>
+                </Hidden>
               </Toolbar>
           </AppBar>
-
+          <Hidden smUp>
+            <div className={classes.mobilenav}>
+            <Button variant="contained" className={classes.button}>
+              <SearchIcon className={classes.rightIcon} />
+              Search
+            </Button>
+            <Escape/>
+            </div>
+          </Hidden>
       </Headroom>
   );
 }

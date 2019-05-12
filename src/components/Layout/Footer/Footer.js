@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import LiveChat from '../../../components/LiveChat/LiveChat'
 const year = new Date().getFullYear();
 const styles = theme => ({
     footer: {
@@ -9,7 +10,7 @@ const styles = theme => ({
         paddingTop: theme.spacing.unit * 2,
         paddingBottom: theme.spacing.unit * 8,
         color: '#ffffff',
-        marginTop: theme.spacing.unit * 12,
+        marginTop: theme.spacing.unit * 2,
     },
     quote: {
         fontSize: 14,
@@ -33,6 +34,8 @@ function Footer(props) {
     const { classes } = props;
 
     return (
+      <>
+        <LiveChat />
         <div className={classes.footer}>
             <Grid container spacing={0}>
                 <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
@@ -47,7 +50,7 @@ function Footer(props) {
                 </Grid>
             </Grid>
         </div>
-
+      </>
     );
 }
 

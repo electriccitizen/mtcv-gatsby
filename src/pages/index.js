@@ -10,7 +10,6 @@ import Navigator from '../components/Navigator/Navigator';
 import { CardContent } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 
-import ChatIcon from '@material-ui/icons/Chat';
 import Link from '../components/Link';
 import Hero from '../components/Hero/Hero';
 import Teasers from '../components/Teasers/Teasers';
@@ -70,7 +69,6 @@ export default function App() {
             <Teasers />
           </Grid>
         </Grid>
-        <ChatIcon className={classes.chat} />
       </Layout>
   );
 }

@@ -1,0 +1,36 @@
+ALL RESOURCES WITH STANDARD NODE DATA
+
+{
+  allNodeResource {
+    edges {
+      node {
+        drupal_id
+        changed
+        status
+        title
+        field_description {
+          value
+        }
+        field_url {
+          uri
+          title
+        }
+        relationships {
+          field_crime {
+            drupal_id
+            name
+          }
+          field_related_issue {
+            drupal_id
+            name
+          }
+          field_region {
+            drupal_id
+            name
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -3,10 +3,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-const year = new Date().getFullYear();
 const styles = theme => ({
   hero: {
-    paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 8,
     marginTop: theme.spacing.unit * 2,
     width: '60%',
@@ -17,7 +15,7 @@ const styles = theme => ({
     textAlign: 'center',
   },
   photo: {
-    width: 360,
+    width: 320,
     height: 200,
     alignContent: 'center',
     justifyContent: 'center',
@@ -53,7 +51,7 @@ function Hero(props) {
         <Grid container justify="center" spacing={2}>
             <Grid item>
               <Card background="red" style={{ backgroundColor }} className={classes.photo}>
-                PHOTO or GRAPHIC
+               NICE IMAGE
               </Card>
             </Grid>
         </Grid>

@@ -1,0 +1,99 @@
+import React from 'react';
+import { StaticQuery, graphql } from "gatsby"
+import { Grid } from 'gatsby'
+import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+import IconButton from '@material-ui/core/IconButton';
+import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
+import NavigationIcon from '@material-ui/icons/Navigation';
+import { makeStyles } from '@material-ui/core'
+//import styles from "./linkblog.module.css"
+
+
+const useStyles = makeStyles(theme => ({
+  card: {
+    backgroundColor: 'Cornsilk',
+
+  },
+  header: {
+    backgroundColor: 'Gainsboro',
+  },
+  search: {
+    width: '100%',
+  },
+  list: {
+    float: 'right',
+    padding: 0,
+  },
+  subheader: {
+    color: 'black',
+  }
+}));
+
+function Resources(props) {
+
+  const classes = useStyles();
+  return (
+    <>
+
+      { props.data.allNodeResource.edges.map(({ node: resource }, key) => {
+          return (
+            <>
+              <Grid container>
+                <Grid className={classes.card} item key={resource.drupal_id} md={6} lg={6}>
+                  {resource.drupal_id}
+                </Grid>
+              </Grid>
+            </>
+          );
+          }
+        )
+      }
+    </>
+  );
+}
+export default Resources
+
+export const query = graphql`
+  query {
+    allNodeResource {
+      edges {
+        node {
+         drupal_id
+         changed
+         status
+         title
+          description: field_description {
+            value
+            }
+          field_url {
+            uri
+            title
+            }
+          relationships {
+            field_crime {
+              drupal_id
+              name
+              }
+            field_related_issue {
+              drupal_id
+               name
+               }
+            field_region {
+              drupal_id
+              name
+               }
+             }
+           }
+         }
+       }
+      }
+`
+
+
+

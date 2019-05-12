@@ -54,7 +54,7 @@ function Teasers(props) {
             <Link className={classes.link} to="library">
             <Card className={classes.factoid}>
               <CardContent>
-                <Typography variant="h6">Featured resource</Typography>
+                <Typography variant="h6">Know your rights</Typography>
                 <Typography component="body2">
                   Clouds are free. They just float around the sky all day and have fun. Just go back and put one little more happy tree in there. If you don't like it - change it. It's your world. We'll paint one happy little tree right here.
                 </Typography>
@@ -70,7 +70,7 @@ function Teasers(props) {
             <Card className={classes.factoid}>
               <CardContent>
 
-                <Typography variant="h6">Did you know?</Typography>
+                <Typography variant="h6">Self-help library</Typography>
                 <Typography component="body2">
                   Clouds are free. They just float around the sky all day and have fun. Just go back and put one little more happy tree in there. If you don't like it - change it. It's your world. We'll paint one happy little tree right here.
                 </Typography>
