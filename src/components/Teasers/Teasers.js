@@ -44,7 +44,7 @@ const styles = theme => ({
 
 
 function Teasers(props) {
-  const { classes, backgroundColor } = props;
+  const { classes } = props;
 
   return (
     <Grid className={classes.wrapper} container spacing={4}>

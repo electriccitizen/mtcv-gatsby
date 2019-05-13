@@ -1,6 +1,5 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import ChatIcon from '@material-ui/icons/Chat';
 const styles = theme => ({
@@ -17,7 +16,7 @@ const styles = theme => ({
 
 
 function LiveChat(props) {
-  const { classes, backgroundColor } = props;
+  const { classes } = props;
 
   return (
     <div className={classes.livechat}>

@@ -62,11 +62,6 @@ const styles = {
  }
 };
 
-function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
-}
-
-
 
 class NavigationDrawer extends React.Component {
   state = {

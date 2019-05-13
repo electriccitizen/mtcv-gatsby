@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 
 function Resources(props) {
-  const post = props.data.allNodeResource
   return (
     <div>
       foo

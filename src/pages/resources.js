@@ -3,10 +3,8 @@ import Typography from '@material-ui/core/Typography';
 import Layout from '../components/Layout/Layout'
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
 import CardActionArea from '@material-ui/core/CardActionArea'
 import ResourceHome from '../components/ResourceHome/ResourceHome';
-import Navigator from '../components/Navigator/Navigator';
 import { CardContent } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 

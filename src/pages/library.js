@@ -1,13 +1,10 @@
 import React from 'react';
 import Layout from '../components/Layout/Layout'
-import ResourceHome from '../components/ResourceHome/ResourceHome';
-import Resources from '../components/Resources/Resources'
 import { makeStyles } from '@material-ui/core/styles';
 import { allResources } from "../hooks/all-resources"
 
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import { CardContent } from '@material-ui/core'
 
 
 
@@ -25,7 +22,7 @@ export default function Library() {
 
   return (
     <Layout>
-      <Grid container spacing={4}>
+      <Grid className={classes.foo} container spacing={4}>
       {foo.edges.map(foo =>
         <>
           <Grid item lg={6}>

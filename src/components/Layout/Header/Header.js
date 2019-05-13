@@ -11,12 +11,8 @@ import styles from "./header.module.css"
 import NavigationDrawer from '../NavigationDrawer/NavigationDrawer';
 import Escape from '../../Escape/Escape';
 import { makeStyles } from '@material-ui/core'
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
-import InputLabel from '@material-ui/core/InputLabel';
 const useStyles = makeStyles(theme => ({
   root: {
     padding: '2px 4px',
