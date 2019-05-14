@@ -2,7 +2,8 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-const styles = theme => ({
+
+const styles = ({
 
   button: {
     backgroundColor: '#ccc',
@@ -12,8 +13,8 @@ const styles = theme => ({
   }
 });
 
-
 function Escape(props) {
+
   const { classes } = props;
 
   return (
@@ -21,7 +22,6 @@ function Escape(props) {
       <ExitToAppIcon className={classes.rightIcon} />
       ESCAPE
     </Button>
-
   );
 }
 

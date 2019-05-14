@@ -1,7 +1,7 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/Layout/Layout'
 import Navigator from '../components/Navigator/Navigator';
-import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   foo: {

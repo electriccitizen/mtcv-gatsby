@@ -1,16 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from "gatsby"
 import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
+
 import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
+import Drawer from '@material-ui/core/Drawer';
+import Icon from '@mdi/react'
 import IconButton from '@material-ui/core/IconButton';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import Icon from '@mdi/react'
-import { Link } from "gatsby"
 import Typography from '@material-ui/core/Typography';
 import { mdiMenu } from '@mdi/js'
 import { mdiEmoticonNeutralOutline } from '@mdi/js'
@@ -28,7 +28,6 @@ const styles = {
   },
   list: {
     width: 320,
-
     fontSize: 16,
   },
   fullList: {
@@ -51,9 +50,8 @@ const styles = {
   fontSize: 14,
  },
  toggle: {
-    marginRight: 12,
+   marginRight: 12,
    marginTop: -8,
-
    opacity: '.6',
    '&:hover': {
         color: 'white',
@@ -64,6 +62,7 @@ const styles = {
 
 
 class NavigationDrawer extends React.Component {
+
   state = {
     top: false,
     left: false,
@@ -78,42 +77,35 @@ class NavigationDrawer extends React.Component {
   };
 
   render() {
+
     const { classes } = this.props;
-
     const mainList = (
-
-      <>
+    <>
       <div className={classes.list}>
         <List className={classes.root} >
-
           <ListItem button key={2}>
             <Link to="/resources">
-            <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
+              <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
             </Link>
             <Link to="/resources">
-            <ListItemText className={classes.link} primary="Self-help library" />
-          </Link>
-
+              <ListItemText className={classes.link} primary="Self-help library" />
+            </Link>
           </ListItem>
-            <ListItem button key={2}>
-
-              <Link to="/help">
-            <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
-              </Link>
-
-              <Link to="/help">
-            <ListItemText className={classes.link} >Legal help navigator</ListItemText>
-              </Link>
+          <ListItem button key={2}>
+            <Link to="/help">
+              <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
+            </Link>
+            <Link to="/help">
+              <ListItemText className={classes.link} >Legal help navigator</ListItemText>
+            </Link>
           </ListItem>
-
-
         </List>
       </div>
-      </>
+    </>
     );
 
     const secondaryList = (
-      <>
+    <>
       <div className={classes.list}>
         <List className={classes.root} >
           <ListItem button className={classes.highlight} key={2}>
@@ -126,14 +118,13 @@ class NavigationDrawer extends React.Component {
           </ListItem>
         </List>
       </div>
-      </>
+    </>
     );
 
     const tertiaryList = (
-      <>
+    <>
       <div className={classes.list}>
         <List className={classes.root} >
-
           <ListItem button key={2}>
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
             <ListItemText classes={{ primary: classes.buttontext }} >Who we are</ListItemText>
@@ -152,49 +143,44 @@ class NavigationDrawer extends React.Component {
       </>
     );
 
-        return (
-      <>
+    return (
+    <>
       <IconButton aria-label="Open navigation" label="Open navigation" className={classes.toggle} onClick={this.toggleDrawer('left', true)}><Icon path={mdiMenu} size={1.2} color="white"   /></IconButton>
       <Drawer anchor="left" open={this.state.left} onClose={this.toggleDrawer('left', false)}>
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer('left', false)}
-            onKeyDown={this.toggleDrawer('left', false)}
-          >
+        <div
+          tabIndex={0}
+          role="button"
+          onClick={this.toggleDrawer('left', false)}
+          onKeyDown={this.toggleDrawer('left', false)}
+        >
           <List
-                subheader={<ListSubheader className={classes.head}>Montana Crime Victims</ListSubheader>}
-                className={classes.root}
+            subheader={<ListSubheader className={classes.head}>Montana Crime Victims</ListSubheader>}
+            className={classes.root}
           >
-      <ListItem  className={classes.list} alignItems="flex-start">
+            <ListItem  className={classes.list} alignItems="flex-start">
+              <ListItemText
+                primary= {
+                  <React.Fragment>
+                  <Typography component="span" className={classes.inline} color="textPrimary">
+                    The only prerequisite is that it makes you happy. If it makes you happy then it's good. Let's build an almighty mountain.
+                  </Typography>
+                  </React.Fragment>
+                }
+              />
+            </ListItem>
+          </List>
 
-        <ListItemText
-          primary= {
-            <React.Fragment>
-              <Typography component="span" className={classes.inline} color="textPrimary">
-                The only prerequisite is that it makes you happy. If it makes you happy then it's good. Let's build an almighty mountain.
-              </Typography>
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      </List>
-        <Divider />
+          <Divider />
             {mainList}
-
-            <Divider />
+          <Divider />
             {secondaryList}
-            <Divider />
+          <Divider />
             {tertiaryList}
-          </div>
-        </Drawer>
-      </>
+        </div>
+      </Drawer>
+    </>
     );
   }
 }
-
-NavigationDrawer.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(NavigationDrawer);

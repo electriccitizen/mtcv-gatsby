@@ -3,55 +3,48 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import LiveChat from '../../../components/LiveChat/LiveChat'
-const year = new Date().getFullYear();
+
+const year = new Date().getFullYear(); // used for copyright date
+
 const styles = theme => ({
-    footer: {
-        backgroundColor: '#091A29',
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 8,
-        color: '#ffffff',
-        marginTop: theme.spacing.unit * 2,
-    },
-    quote: {
-        fontSize: 14,
-        paddingLeft: theme.spacing.unit * 2,
-        color: '#ffffff',
-    },
-    footernav: {
-        paddingRight: theme.spacing.unit * 2,
-        textAlign: "right",
-        fontSize: 14,
-        color: '#fff',
-    },
-    footerlink: {
-        color: '#fff',
-    }
+  footer: {
+    backgroundColor: '#091A29',
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 8,
+    color: '#ffffff',
+    marginTop: theme.spacing.unit * 2,
+    fontSize: 14,
+    paddingLeft: theme.spacing.unit * 2,
+  },
+  right: {
+    textAlign: 'right',
+    paddingRight: theme.spacing.unit * 2,
+  }
 
 });
 
 
 function Footer(props) {
-    const { classes } = props;
-
-    return (
-      <>
-        <LiveChat />
-        <div className={classes.footer}>
-            <Grid container spacing={0}>
-                <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
-                    <Typography className={classes.quote} paragraph>
-                      Footer content
-                    </Typography>
-                </Grid>
-                <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-                    <Typography className={classes.footernav}>
-                        &copy; {year} Montana Crime Victims
-                    </Typography>
-                </Grid>
-            </Grid>
-        </div>
-      </>
-    );
+  const { classes } = props;
+  return (
+    <>
+      <LiveChat />
+      <div className={classes.footer}>
+        <Grid container spacing={0}>
+          <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
+            <Typography paragraph>
+              Footer content
+            </Typography>
+          </Grid>
+          <Grid className={classes.right} item xs={12} sm={12} md={4} lg={4} xl={4}>
+            <Typography>
+              &copy; {year} Montana Crime Victims
+            </Typography>
+          </Grid>
+        </Grid>
+      </div>
+    </>
+  );
 }
 
 export default withStyles(styles)(Footer)

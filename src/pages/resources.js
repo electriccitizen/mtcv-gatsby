@@ -1,14 +1,13 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea'
+import { CardContent } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography';
 import Layout from '../components/Layout/Layout'
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea'
 import ResourceHome from '../components/ResourceHome/ResourceHome';
-import { CardContent } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles';
-
-import Link from '../components/Link';
 
 const useStyles = makeStyles(theme => ({
   header: {

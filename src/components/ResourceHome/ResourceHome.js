@@ -1,14 +1,14 @@
 import React from 'react'
-import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@material-ui/core/styles';
+import CardHeader from '@material-ui/core/CardHeader'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
-import SearchIcon from '@material-ui/icons/Search';
+import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import { makeStyles } from '@material-ui/core/styles';
-import CardHeader from '@material-ui/core/CardHeader'
+import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -35,49 +35,43 @@ export default function ResourceHome() {
 
   const classes = useStyles();
   return (
-<>
+    <>
       <Grid container spacing={2}>
         <Grid item lg={12}>
           <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
+            <Card className={classes.card}>
+              <CardHeader
                 className={classes.header}
-              title="Self-help library"
+                title="Self-help library"
                 subheader="Search our library for resources and services"
                 classes={{
                   subheader: classes.subheader,
                 }}
-              />
-          </Card>
+                />
+            </Card>
           </CardActionArea>
-
           <div className={classes.search}>
-          <List className={classes.list} >
-            <ListItem>
-              <ListItemIcon>
-
-                <SearchIcon />
-
-              </ListItemIcon>
-              <ListItemText primary="Search all resources" />
-            </ListItem>
-
-          </List>
+            <List className={classes.list} >
+              <ListItem>
+                <ListItemIcon>
+                  <SearchIcon />
+                </ListItemIcon>
+                <ListItemText primary="Search all resources" />
+              </ListItem>
+            </List>
           </div>
         </Grid>
-
         <Grid item lg={4}>
           <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Domestic Violence"
+            <Card className={classes.card}>
+              <CardHeader
+                title="Domestic Violence"
                 subheader="Search our library for resources and services"
               />
-          </Card>
+            </Card>
           </CardActionArea>
         </Grid>
         <Grid item lg={4}>
-
           <CardActionArea>
           <Card className={classes.card}>
             <CardHeader

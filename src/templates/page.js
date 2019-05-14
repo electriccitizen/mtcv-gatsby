@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout/Layout';
 import { withStyles } from '@material-ui/core/styles';
-import Page from '../components/Page/Page';
+
 import moment from 'moment'
+import Layout from '../components/Layout/Layout';
+import Page from '../components/Page/Page';
 
 const styles = theme => ({
     root: {

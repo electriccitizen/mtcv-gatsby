@@ -1,13 +1,10 @@
-/**
- * Layout component with header and footer
- * Refactored: 04-30-19
- */
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { withStyles } from '@material-ui/core/styles'
+import 'typeface-roboto';
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
-import 'typeface-roboto';
+
 
 const styles = theme => ({
   '@global': {

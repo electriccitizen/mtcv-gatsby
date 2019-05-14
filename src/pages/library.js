@@ -1,12 +1,9 @@
 import React from 'react';
-import Layout from '../components/Layout/Layout'
 import { makeStyles } from '@material-ui/core/styles';
 import { allResources } from "../hooks/all-resources"
-
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-
-
+import Layout from '../components/Layout/Layout'
 
 const useStyles = makeStyles(theme => ({
   foo: {
@@ -17,9 +14,6 @@ const useStyles = makeStyles(theme => ({
 export default function Library() {
   const classes = useStyles();
   const foo = allResources()
-
-
-
   return (
     <Layout>
       <Grid className={classes.foo} container spacing={4}>

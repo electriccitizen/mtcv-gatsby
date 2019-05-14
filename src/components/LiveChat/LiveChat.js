@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import ChatIcon from '@material-ui/icons/Chat';
-const styles = theme => ({
+const styles = ({
   livechat: {
     width: '100%',
     textAlign: 'right',
@@ -14,8 +14,8 @@ const styles = theme => ({
   }
 });
 
-
 function LiveChat(props) {
+
   const { classes } = props;
 
   return (
@@ -23,7 +23,6 @@ function LiveChat(props) {
       <Typography variant="h6">LIVE CHAT</Typography>
       <ChatIcon className={classes.chat} />
     </div>
-
   );
 }
 
