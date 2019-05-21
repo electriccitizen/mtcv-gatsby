@@ -1,59 +1,70 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import Grid from '@material-ui/core/Grid';
+import { makeStyles } from "@material-ui/styles";
 import Typography from '@material-ui/core/Typography';
+import CustomButton from '../CustomButton/CustomButton';
 
-const styles = theme => ({
+const styles = props => ({
   hero: {
-    paddingBottom: theme.spacing.unit * 8,
-    marginTop: theme.spacing.unit * 2,
-    width: '60%',
-    marginRight: 'auto',
-    marginLeft: 'auto',
+    width: '100%',
+    backgroundColor: props.color,
   },
   inner: {
     textAlign: 'center',
-  },
-  photo: {
-    width: 320,
-    height: 200,
-    alignContent: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'Gainsboro',
-    paddingTop: '6em',
-    marginTop: '3em',
-
   },
   message: {
     marginTop: '3em',
   }
 });
 
+const useStyles = makeStyles(theme => {
+  console.log(theme);
+
+  return {
+    root: {
+      opacity: '.8',
+      backgroundColor: theme.custom.color,
+      color: theme.custom.color,
+      "backgroundImage": props => `url(${props.heroimage.localFile.publicURL}),linear-gradient(0deg, rgba(0,255,0,0.4), rgba(255,0,0,0.2))`,
+      "background-position-y":`calc(50% - -42px)`,
+      width: '99.225vw',
+      position: 'relative',
+      left: '50%',
+      marginLeft: '-49.59vw',
+      marginTop: '-2em',
+      marginBottom: '4em',
+      textAlign: 'center',
+      padding: '6em',
+    },
+    headline: {
+      fontWeight: theme.headline.fontWeight,
+      fontSize: theme.headline.fontSize,
+      width: theme.headline.width,
+      marginRight: theme.headline.marginRight,
+      marginLeft: theme.headline.marginLeft,
+      marginBottom: theme.headline.marginBottom,
+    },
+    subtitle: {
+      fontSize: theme.subtitle.fontSize,
+      width: theme.subtitle.width,
+      marginRight: theme.subtitle.marginRight,
+      marginLeft: theme.subtitle.marginLeft,
+
+    }
+  };
+});
+
+
 
 function Hero(props) {
 
-  const { classes, backgroundColor } = props;
+  const classes = useStyles(props);
 
   return (
-    <div className={classes.hero}>
-      <div className={classes.inner}>
-        <Typography variant="h4">HELP FOR MONTANA<br /> CRIME VICTIMS</Typography>
-        <Grid container justify="center" spacing={2}>
-          <Grid item>
-            <Card background="red" style={{ backgroundColor }} className={classes.photo}>
-              NICE IMAGE
-            </Card>
-          </Grid>
-        </Grid>
-        <Grid container className={classes.message} justify="center" spacing={2}>
-          <Grid item>
-            <Typography>
-              Look around, look at what we have. Beauty is everywhere, you only have to look to see it. Let's put a touch more of the magic here. We start with a vision in our heart, and we put it on canvas.
-            </Typography>
-          </Grid>
-        </Grid>
-      </div>
+    <div className={classes.root}>
+      <Typography variant="h1" className={classes.headline}>{props.title}</Typography>
+      <Typography variant="h4" className={classes.subtitle}>{props.subtitle}</Typography>
+      <CustomButton buttons={props.buttons} />
     </div>
   );
 }

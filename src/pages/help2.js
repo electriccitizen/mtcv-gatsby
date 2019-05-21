@@ -1,9 +1,7 @@
 import React from 'react';
-
-import { Link } from "gatsby"
 import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/Layout/Layout'
-import Navigator from '../components/Navigator/Navigator';
+import Navigator2 from '../components/Navigator/Navigator2';
 
 const useStyles = makeStyles(theme => ({
   foo: {
@@ -11,13 +9,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Help() {
+export default function Help2() {
   const classes = useStyles();
   return (
     <Layout>
-      <Link to="/help2">
-      <Navigator className={classes.foo}/>
-      </Link>
-      </Layout>
+      <Navigator2 className={classes.foo}/>
+    </Layout>
   );
 }

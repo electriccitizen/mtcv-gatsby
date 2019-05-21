@@ -7,9 +7,9 @@ import Layout from '../components/Layout/Layout';
 import Page from '../components/Page/Page';
 
 const styles = theme => ({
-    root: {
-         flexGrow: 1,
-    },
+  root: {
+    flexGrow: 1,
+  },
 });
 
 const pageTemplate = (props) => {
@@ -18,12 +18,12 @@ const pageTemplate = (props) => {
 
   // Check for a valid media object and set to empty
   // (i think NULL or not defined will break?)
-  var media;
-  if (page.relationships.field_hero) {
-    media = page.relationships.field_hero.relationships.field_media_image
-  } else {
-    media = ''
-  }
+  //var media;
+  //if (page.relationships.field_hero) {
+  //  media = page.relationships.field_hero.relationships.field_media_image
+  //} else {
+  //  media = ''
+  //}
 
   return (
     <Layout>
@@ -31,9 +31,8 @@ const pageTemplate = (props) => {
         <Page
           title={page.title}
           changed={moment(page.changed).format('DD MMMM, YYYY')}
-          summary={page.summary.processed}
-          media={media}
-          content={page.relationships.field_content}
+          content={page.relationships.field_section}
+          hero={page.relationships.field_header}
         />
       </div>
     </Layout>
@@ -43,81 +42,182 @@ const pageTemplate = (props) => {
 export default withStyles(styles)(pageTemplate);
 
 export const query = graphql `
-  query fooTemplate {
-    nodePage  {
-      drupal_id
-      title
-      path {
-        alias
+  query pageTemplate {
+    nodePage {
+    drupal_id
+    title
+    path {
+      alias
+    }
+    created
+    changed
+    relationships {
+      field_header {
+        field_title
+        field_color_mode
+        field_hide_headline
+        field_subheader
+        field_hero_bg {
+          color
+          opacity
         }
-      created
-      changed
-      summary: field_summary {
-        processed
-      }
-      relationships {
-      field_hero {
-        id
         relationships {
-          field_media_image {
-            id
-            filename
-              uri {
-                value
-                url
-              }
-            localFile {
-              publicURL
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-      field_content {
-        __typename
-        ... on paragraph__text {
-          id
-          field_header
-          field_text {
-            processed
-          }
-        }
-        ... on paragraph__image {
-          id
-          field_caption {
-            format
-            value
-            processed
-          }
-          relationships {
-            field_single_image {
-              relationships {
-                field_media_image {
-                  id
-                  filename
-                  uri {
-                    value
-                    url
-                  }
-                  localFile {
-                    publicURL
-                    childImageSharp {
-                      fluid(maxWidth: 550, maxHeight: 550) {
-                        ...GatsbyImageSharpFluid
-                      }
+          field_hero_image {
+            drupal_id
+            relationships {
+              field_media_image {
+                localFile {
+                  publicURL
+                  childImageSharp {
+                    fluid(
+                    maxWidth: 200, 
+                    duotone: {
+                    highlight: "#f00e2e",
+                    shadow: "#192550"
+                    }
+                    ) 
+                    {
+                      ...GatsbyImageSharpFluid
+                      
                     }
                   }
                 }
               }
             }
           }
+          field_buttons {
+            drupal_id 
+            field_button_text
+            field_icon
+            field_button_link {
+              uri
+              title
+            }
+            field_button_size
+            field_button_style
+            field_button_color
+          }
         }
       }
-
+      field_section {
+        field_background_color {
+          color
+          opacity
+        }
+        __typename
+        ... on paragraph__section {
+          drupal_id
+          relationships {
+            field_content {
+              __typename
+              ... on paragraph__text {
+                drupal_id
+                field_special_fx
+                field_header
+                field_text {
+                  value
+                }
+              }
+              ... on paragraph__image {
+                drupal_id
+                field_special_fx
+                field_caption {
+                  value
+                }
+                relationships {
+                  field_single_image {
+                    drupal_id
+                    relationships {
+                      field_media_image {
+                        drupal_id
+                        filename
+                        uri {
+                          value
+                          url
+                        }
+                        localFile {
+                          publicURL 
+                          childImageSharp {
+                            fixed {
+                              base64
+                              tracedSVG
+                              aspectRatio
+                              width
+                              height
+                              src
+                              srcSet
+                              srcWebp
+                              srcSetWebp
+                              originalName
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              ... on paragraph__grid {
+                drupal_id
+                field_columns
+                relationships {
+                  field_grid_content {
+                    __typename
+                    ... on paragraph__text {
+                      drupal_id
+                      field_special_fx
+                      field_header
+                      field_text {
+                        value
+                        processed
+                      }
+                    }
+                    ... on paragraph__image {
+                      drupal_id
+                      field_special_fx
+                      field_caption {
+                        value
+                      }
+                      relationships {
+                        field_single_image {
+                          drupal_id
+                          relationships {
+                            field_media_image {
+                              drupal_id
+                              filename
+                              uri {
+                                value
+                                url
+                              }
+                              localFile {
+                                publicURL 
+                                childImageSharp {
+                                  fixed {
+                                    base64
+                                    tracedSVG
+                                    aspectRatio
+                                    width
+                                    height
+                                    src
+                                    srcSet
+                                    srcWebp
+                                    srcSetWebp
+                                    originalName
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    } 
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

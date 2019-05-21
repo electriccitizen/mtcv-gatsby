@@ -11,7 +11,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea'
 import { CardContent } from '@material-ui/core'
 import CardHeader from '@material-ui/core/CardHeader'
-//import { Link } from "gatsby"
+import { Link } from "gatsby"
 
 const useStyles = makeStyles(theme => ({
   navigator: {
@@ -51,6 +51,7 @@ function HelpTool() {
     <Container maxWidth="sm">
       <Box className={classes.navigator}>
         <CardActionArea>
+          <Link to="/help">
             <Card>
               <CardHeader
                 classes={{
@@ -80,6 +81,7 @@ function HelpTool() {
                 </div>
               </CardContent>
             </Card>
+          </Link>
         </CardActionArea>
       </Box>
     </Container>
@@ -87,7 +89,7 @@ function HelpTool() {
   );
 }
 
-export default function Navigator() {
+export default function Navigator2() {
 
   return (
     <>

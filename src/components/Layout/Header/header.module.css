@@ -6,6 +6,7 @@
     text-decoration: none;
     font-family: Roboto;
     display: inline;
+    font-weight: bold;
 }
 .icon {
     padding-right: 1em;

@@ -24,6 +24,7 @@
     "react-dom": "latest",
     "react-headroom": "^2.2.8",
     "react-helmet": "latest",
+    "react-reveal": "^1.2.2",
     "styled-components": "^4.2.0",
     "typeface-roboto": "0.0.54"
   },

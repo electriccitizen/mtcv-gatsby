@@ -1,9 +1,10 @@
 import React from 'react';
+import Img from 'gatsby-image';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import ParagraphText from '../ParagraphText/ParagraphText';
 import ParagraphImage from '../ParagraphImage/ParagraphImage';
-import ParagraphSection from '../ParagraphSection/ParagraphSection';
-import Hero from '../Hero/Hero';
 
 const styles = theme => ({
   root: {
@@ -24,14 +25,17 @@ class Page extends React.Component {
         {
           this.props.content.map((item, key) => {
 
+
+
             // if even, render grey background
             if (item.__typename === 'paragraph__text') {
+              // don't forget to return what you want to render!
+
               return (
                 <ParagraphText
                   title={item.__typename}
                   text={item.field_text.processed}
                   header={item.field_header}
-                  fx={item.field_special_fx}
                 />
               );
 
@@ -41,24 +45,16 @@ class Page extends React.Component {
               } else {
                 media = ''
               }
+              // you can also use ternary expression
               return (
                 <ParagraphImage
                   title={item.__typename}
                   media={media}
                   caption={item.field_caption.processed}
-                  fx={item.field_special_fx}
                 />
               );
-            } else if (item.__typename === 'paragraph__section') {
-              return (
-              <ParagraphSection
-                  title="my section"
-                  content={item.relationships.field_content}
-              />
-
-              );
             } else {
-              return null
+              return ('foo')
             }
           })
         }
@@ -70,19 +66,24 @@ class Page extends React.Component {
 
 
   render() {
+
+    const { classes } = this.props;
     return (
-      <>
-        <Hero
-          title={this.props.hero.field_title}
-          subtitle={this.props.hero.field_subheader}
-          color={this.props.hero.field_hero_bg.color}
-          opacity={this.props.hero.field_hero_bg.opacity}
-          heroimage={this.props.hero.relationships.field_hero_image.relationships.field_media_image}
-          hideheadline={this.props.hero.field_hide_headline}
-          buttons={this.props.hero.relationships.field_buttons}
-        />
-      { this.renderElement() }
-      </>
+      <Grid container spacing={24} sm={12} md={12} lg={12}>
+        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+          <Typography variant="h1" component="h1">{this.props.title}</Typography>
+          <Typography variant="subtitle1" dangerouslySetInnerHTML={{ __html: this.props.summary }} />
+          <Typography variant="overline" gutterBottom>last updated: {this.props.changed}</Typography>
+        </Grid>
+        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+          {this.props.media.localFile &&
+          <div className={classes.hero}>
+            <Img fluid={this.props.media.localFile.childImageSharp.fluid} />
+          </div>
+          }
+        </Grid>
+      </Grid>
+
     )
   }
 }

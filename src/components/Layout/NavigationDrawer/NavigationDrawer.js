@@ -25,6 +25,9 @@ const styles = {
   },
   head: {
     fontSize: 20,
+    color: '#333',
+    paddingTop: '1em',
+
   },
   list: {
     width: 320,
@@ -52,7 +55,7 @@ const styles = {
  toggle: {
    marginRight: 12,
    marginTop: -8,
-   opacity: '.6',
+   opacity: '1',
    '&:hover': {
         color: 'white',
       opacity: '1',
@@ -108,10 +111,6 @@ class NavigationDrawer extends React.Component {
     <>
       <div className={classes.list}>
         <List className={classes.root} >
-          <ListItem button className={classes.highlight} key={2}>
-            <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
-            <ListItemText classes={{ primary: classes.buttontext }} >Escape</ListItemText>
-          </ListItem>
           <ListItem button  key={2}>
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
             <ListItemText classes={{ primary: classes.buttontext }} >Safe browsing</ListItemText>
@@ -145,7 +144,7 @@ class NavigationDrawer extends React.Component {
 
     return (
     <>
-      <IconButton aria-label="Open navigation" label="Open navigation" className={classes.toggle} onClick={this.toggleDrawer('left', true)}><Icon path={mdiMenu} size={1.2} color="white"   /></IconButton>
+      <IconButton aria-label="Open navigation" label="Open navigation" className={classes.toggle} onClick={this.toggleDrawer('left', true)}><Icon path={mdiMenu} size={1.2} color="white"/></IconButton>
       <Drawer anchor="left" open={this.state.left} onClose={this.toggleDrawer('left', false)}>
         <div
           tabIndex={0}
@@ -154,7 +153,7 @@ class NavigationDrawer extends React.Component {
           onKeyDown={this.toggleDrawer('left', false)}
         >
           <List
-            subheader={<ListSubheader className={classes.head}>Montana Crime Victims</ListSubheader>}
+            subheader={<ListSubheader className={classes.head}>MONTANA CRIME VICTIMS</ListSubheader>}
             className={classes.root}
           >
             <ListItem  className={classes.list} alignItems="flex-start">

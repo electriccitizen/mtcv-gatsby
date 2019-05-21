@@ -10,7 +10,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Montana Crime Victims`,
+    title: `MONTANA CRIME VICTIMS`,
     siteUrl: `https://www.gatsbyjs.org`,
     description: `Resources for crime victims in the state of Montana.`,
     slogan: "We are a free, nonprofit resource for victims of crime in the state of Montana."
@@ -42,6 +42,7 @@ module.exports = {
       resolve: 'gatsby-source-drupal',
       options: {
         baseUrl: 'http://dev-mtcv.pantheonsite.io/',
+        //baseUrl: 'http://mtcv.docksal/',
         apiBase: 'jsonapi', // endpoint of Drupal server
       },
     },
