@@ -22,6 +22,7 @@ const styles = theme => ({
     width: '100%',
   },
   container: {
+	   marginBottom: theme.container.marginBottom,
   }
 
 });

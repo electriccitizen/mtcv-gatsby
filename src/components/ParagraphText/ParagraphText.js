@@ -9,6 +9,7 @@ const styles = theme => ({
 	  fontSize: 30,
 	},
   container: {
+	   marginBottom: theme.container.marginBottom,
   },
   bg: {
     backgroundColor: 'purple',

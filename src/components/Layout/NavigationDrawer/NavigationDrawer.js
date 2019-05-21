@@ -63,7 +63,6 @@ const styles = {
  }
 };
 
-
 class NavigationDrawer extends React.Component {
 
   state = {
@@ -87,19 +86,19 @@ class NavigationDrawer extends React.Component {
       <div className={classes.list}>
         <List className={classes.root} >
           <ListItem button key={2}>
-            <Link to="/resources">
+            <Link to="/help">
               <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
             </Link>
-            <Link to="/resources">
-              <ListItemText className={classes.link} primary="Self-help library" />
+            <Link to="/help">
+              <ListItemText className={classes.link} >Find help</ListItemText>
             </Link>
           </ListItem>
           <ListItem button key={2}>
-            <Link to="/help">
+            <Link to="/library">
               <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
             </Link>
-            <Link to="/help">
-              <ListItemText className={classes.link} >Legal help navigator</ListItemText>
+            <Link to="/resources">
+              <ListItemText className={classes.link} primary="Resource library" />
             </Link>
           </ListItem>
         </List>

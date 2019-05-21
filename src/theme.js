@@ -19,6 +19,26 @@ const theme = createMuiTheme({
       main: '#B71C1C',
     }
   },
+  custom: {
+    color: '#fff',
+  },
+  headline: {
+    fontWeight: 900,
+    fontSize: 48,
+    width: '50%',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    marginBottom: '1.2em',
+  },
+  subtitle: {
+    fontSize: 24,
+    width: '60%',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+  },
+  container: {
+    marginBottom: '6em',
+  }
 
 });
 

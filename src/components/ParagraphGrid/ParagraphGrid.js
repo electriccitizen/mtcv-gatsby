@@ -14,6 +14,7 @@ const styles = theme => ({
     marginBottom: '4em',
   },
   container: {
+	   marginBottom: theme.container.marginBottom,
   }
 
 });

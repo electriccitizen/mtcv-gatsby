@@ -23,8 +23,8 @@ const useStyles = makeStyles(theme => {
   return {
     root: {
       opacity: '.8',
-      backgroundColor: '#fff',
-      color: '#000',
+      backgroundColor: theme.custom.color,
+      color: theme.custom.color,
       "backgroundImage": props => `url(${props.heroimage.localFile.publicURL}),linear-gradient(0deg, rgba(0,255,0,0.4), rgba(255,0,0,0.2))`,
       "background-position-y":`calc(50% - -42px)`,
       width: '99.225vw',
@@ -37,9 +37,18 @@ const useStyles = makeStyles(theme => {
       padding: '6em',
     },
     headline: {
-
+      fontWeight: theme.headline.fontWeight,
+      fontSize: theme.headline.fontSize,
+      width: theme.headline.width,
+      marginRight: theme.headline.marginRight,
+      marginLeft: theme.headline.marginLeft,
+      marginBottom: theme.headline.marginBottom,
     },
     subtitle: {
+      fontSize: theme.subtitle.fontSize,
+      width: theme.subtitle.width,
+      marginRight: theme.subtitle.marginRight,
+      marginLeft: theme.subtitle.marginLeft,
 
     }
   };
