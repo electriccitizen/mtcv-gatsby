@@ -111,9 +111,13 @@ class NavigationDrawer extends React.Component {
       <div className={classes.list}>
         <List className={classes.root} >
           <ListItem button  key={2}>
+            <Link to="/safe-browsing">
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
-            <ListItemText classes={{ primary: classes.buttontext }} >Safe browsing</ListItemText>
-          </ListItem>
+            </Link>
+            <Link to="/safe-browsing">
+            <ListItemText classes={{ primary: classes.link }} >Safe browsing</ListItemText>
+            </Link>
+            </ListItem>
         </List>
       </div>
     </>
@@ -128,7 +132,7 @@ class NavigationDrawer extends React.Component {
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
            </Link>
             <Link to="/who-we-are">
-            <ListItemText classes={{ primary: classes.buttontext }} >Who we are</ListItemText>
+            <ListItemText classes={{ primary: classes.link }} >Who we are</ListItemText>
             </Link>
             </ListItem>
           <ListItem button key={2}>
@@ -136,7 +140,7 @@ class NavigationDrawer extends React.Component {
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
             </Link>
             <Link to="/contact">
-            <ListItemText classes={{ primary: classes.buttontext }} >Contact us</ListItemText>
+            <ListItemText classes={{ primary: classes.link }} >Contact us</ListItemText>
             </Link>
             </ListItem>
           <ListItem button key={2}>
@@ -144,7 +148,7 @@ class NavigationDrawer extends React.Component {
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
             </Link>
             <Link to="/partners">
-              <ListItemText classes={{ primary: classes.buttontext }} >Partners</ListItemText>
+              <ListItemText classes={{ primary: classes.link}} >Partners</ListItemText>
             </Link>
             </ListItem>
         </List>
