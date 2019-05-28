@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-//import { Link } from "gatsby"
+import { Link } from "gatsby"
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
@@ -36,6 +36,7 @@ function Teasers() {
       <Grid item align="center" lg={6}>
         <Card className={classes.card}>
           <CardActionArea>
+
             <CardMedia
               component="img"
               alt="Contemplative Reptile"
@@ -45,7 +46,7 @@ function Teasers() {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-               Know your rights
+              Safe browsing
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
@@ -53,18 +54,24 @@ function Teasers() {
               </Typography>
             </CardContent>
             <CardActions className={classes.button}>
+
+              <Link to="/safe-browsing">
             <Button variant="contained" color="secondary" size="small" >
               Learn More
             </Button>
 
+          </Link>
               </CardActions>
           </CardActionArea>
 
         </Card>
       </Grid>
       <Grid item lg={6} align="center">
+
         <Card className={classes.card}>
+
           <CardActionArea>
+
             <CardMedia
               component="img"
               alt="Contemplative Reptile"
@@ -82,10 +89,14 @@ function Teasers() {
               </Typography>
             </CardContent>
             <CardActions className={classes.button}>
+
+              <Link  to="/library" className={classes.card}>
             <Button variant="contained" size="small" color="secondary">
               Learn More
             </Button>
+              </Link>
           </CardActions>
+
           </CardActionArea>
 
         </Card>      </Grid>
