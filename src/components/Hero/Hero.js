@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => {
       opacity: '.8',
       backgroundColor: theme.custom.color,
       color: theme.custom.color,
-      "backgroundImage": props => `url(${props.heroimage.localFile.publicURL}),linear-gradient(0deg, rgba(0,255,0,0.4), rgba(255,0,0,0.2))`,
+      "backgroundImage": props => `url(${props.heroimage.localFile.publicURL})`,
       "background-position-y":`calc(50% - -42px)`,
       width: '99.225vw',
       position: 'relative',
