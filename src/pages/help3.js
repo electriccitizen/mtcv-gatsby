@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from '../components/Layout/Layout'
-import Navigator2 from '../components/Navigator/Navigator2';
+import Navigator3 from '../components/Navigator/Navigator3';
 
-export default function Help2() {
+export default function Help3() {
   return (
     <Layout>
-      <Navigator2 />
+      <Navigator3 />
     </Layout>
   );
 }

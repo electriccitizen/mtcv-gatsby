@@ -11,7 +11,9 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea'
 import { CardContent } from '@material-ui/core'
 import CardHeader from '@material-ui/core/CardHeader'
-//import { Link } from "gatsby"
+import Button from '@material-ui/core/Button';
+import { Link } from "gatsby"
+import { navA } from "../../hooks/nav-a"
 
 const useStyles = makeStyles(theme => ({
   navigator: {
@@ -37,6 +39,11 @@ const useStyles = makeStyles(theme => ({
   },
   help: {
     padding: '1em',
+  },
+  button: {
+    textAlign: 'right',
+    display: 'block',
+    width: '100%',
   }
 }));
 
@@ -44,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 function HelpTool() {
 
   const classes = useStyles();
-  const [value] = React.useState('female');
+  const nav = navA()
 
   return (
     <div >
@@ -62,18 +69,31 @@ function HelpTool() {
               />
               <CardContent>
                 <FormControl component="fieldset" className={classes.formControl}>
+
                   <RadioGroup
                     aria-label="Gender"
                     name="gender1"
                     className={classes.group}
-                    value={value}
                   >
-                  <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-                  <FormControlLabel value="no" control={<Radio />} label="No" />
-                  <FormControlLabel value="notsure" control={<Radio />} label="I'm not sure" />
+                  {
+                    nav.edges.map((item, key) => {
+                      return (
+                        <FormControlLabel value={item.node.name} control={<Radio />} label={item.node.name} />
+                      );
+                    })
+                  }
                   </RadioGroup>
                 </FormControl>
+
+                <div className={classes.button}>
+                  <Link to="/help2">
+                  <Button variant="contained" color="secondary" size="small" >
+                    Get started
+                  </Button>
+                  </Link>
+                </div>
                 <div className={classes.help}>
+
                 <Typography variant="body2">Answer to the best of your ability, and we will match
                   you with resources available in your area.
                 </Typography>

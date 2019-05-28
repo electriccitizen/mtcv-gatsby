@@ -9,10 +9,12 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import SearchIcon from '@material-ui/icons/Search';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles(theme => ({
   card: {
     backgroundColor: 'Cornsilk',
+    maxWidth: '400px',
 
   },
   header: {
@@ -27,7 +29,12 @@ const useStyles = makeStyles(theme => ({
   },
   subheader: {
     color: 'black',
-  }
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: '80%',
+  },
 }));
 
 
@@ -39,10 +46,10 @@ export default function ResourceHome() {
       <Grid container spacing={2}>
         <Grid item lg={12}>
           <CardActionArea>
-            <Card className={classes.card}>
+            <Card >
               <CardHeader
                 className={classes.header}
-                title="Self-help library"
+                title="Resource library"
                 subheader="Search our library for resources and services"
                 classes={{
                   subheader: classes.subheader,
@@ -61,143 +68,16 @@ export default function ResourceHome() {
             </List>
           </div>
         </Grid>
-        <Grid item lg={4}>
-          <CardActionArea>
-            <Card className={classes.card}>
-              <CardHeader
-                title="Domestic Violence"
-                subheader="Search our library for resources and services"
-              />
-            </Card>
-          </CardActionArea>
-        </Grid>
-        <Grid item lg={4}>
-          <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Sexual Assault"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-          </CardActionArea>
-        </Grid>
-        <Grid item lg={4}>
-
-          <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Stalking or Harassment"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-          </CardActionArea>
-        </Grid>
-
-        <Grid item lg={4}>
-
-          <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Elder Abuse or Neglect"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-          </CardActionArea>
-        </Grid>
-        <Grid item lg={4}>
-
-          <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Exploitation"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-          </CardActionArea>
-        </Grid>
-        <Grid item lg={4}>
-
-          <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Child Abuse"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-          </CardActionArea>
-        </Grid>
-
-      <Grid item lg={4}>
-
-        <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Assault"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-        </CardActionArea>
-        </Grid>
-        <Grid item lg={4}>
-
-          <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Fraud or Identity Theft"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-          </CardActionArea>
-        </Grid>
-        <Grid item lg={4}>
-
-          <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Hate Crimes or Discrimination"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-          </CardActionArea>
-        </Grid>
-
-
-<Grid item lg={4}>
-
-  <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Human Trafficking"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-  </CardActionArea>
-
-        </Grid>
-        <Grid item lg={4}>
-
-          <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="School Violence"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-          </CardActionArea>
-        </Grid>
-        <Grid item lg={4}>
-          <CardActionArea>
-          <Card className={classes.card}>
-            <CardHeader
-              title="Other Crimes"
-                subheader="Search our library for resources and services"
-              />
-          </Card>
-          </CardActionArea>
-        </Grid>
 
 
       </Grid>
+      <TextField
+        id="outlined-with-placeholder"
+        label="Search by keyword"
+        className={classes.textField}
+        margin="normal"
+        variant="outlined"
+      />
 
     </>
   );

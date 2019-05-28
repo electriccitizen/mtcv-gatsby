@@ -3,16 +3,17 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea'
 import { CardContent } from '@material-ui/core'
 import CardHeader from '@material-ui/core/CardHeader'
 import Button from '@material-ui/core/Button';
 import { Link } from "gatsby"
-import { navB } from "../../hooks/nav-b"
+import { navC } from "../../hooks/nav-c"
 import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
+
 import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles(theme => ({
@@ -51,7 +52,7 @@ const useStyles = makeStyles(theme => ({
 function HelpTool() {
 
   const classes = useStyles();
-  const nav = navB()
+  const nav = navC()
 
   return (
     <div >
@@ -63,7 +64,7 @@ function HelpTool() {
                 classes={{
                   title: classes.header,
                 }}
-                title="What was the nature of the crime? (Select one ore more)"
+                title="Do you have any related life issues or legal needs? (Select one or more)"
                 color="primary"
                 size="small"
               />
@@ -78,11 +79,11 @@ function HelpTool() {
                         return (
 
                           <FormControlLabel
-                      control={
-                        <Checkbox value="gilad" />
-                      }
-                      label={item.node.name}
-                    />
+                            control={
+                              <Checkbox value="gilad" />
+                            }
+                            label={item.node.name}
+                          />
                         );
                       })
                     }
@@ -90,7 +91,7 @@ function HelpTool() {
                 </FormControl>
 
                 <div className={classes.button}>
-                  <Link to="/help3">
+                  <Link to="/help4">
                     <Button variant="contained" color="secondary" size="small" >
                       Next >
                     </Button>

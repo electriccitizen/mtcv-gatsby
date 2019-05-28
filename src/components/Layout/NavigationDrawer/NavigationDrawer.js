@@ -97,7 +97,7 @@ class NavigationDrawer extends React.Component {
             <Link to="/library">
               <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
             </Link>
-            <Link to="/resources">
+            <Link to="/library">
               <ListItemText className={classes.link} primary="Resource library" />
             </Link>
           </ListItem>
@@ -124,18 +124,29 @@ class NavigationDrawer extends React.Component {
       <div className={classes.list}>
         <List className={classes.root} >
           <ListItem button key={2}>
+           <Link to="/who-we-are">
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
+           </Link>
+            <Link to="/who-we-are">
             <ListItemText classes={{ primary: classes.buttontext }} >Who we are</ListItemText>
-          </ListItem>
+            </Link>
+            </ListItem>
           <ListItem button key={2}>
+            <Link to="/contact">
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
+            </Link>
+            <Link to="/contact">
             <ListItemText classes={{ primary: classes.buttontext }} >Contact us</ListItemText>
-          </ListItem>
+            </Link>
+            </ListItem>
           <ListItem button key={2}>
+            <Link to="/partners">
             <ListItemIcon><Icon className={classes.icon} path={mdiEmoticonNeutralOutline} size={1}/></ListItemIcon>
-            <ListItemText classes={{ primary: classes.buttontext }} >Partners</ListItemText>
-          </ListItem>
-
+            </Link>
+            <Link to="/partners">
+              <ListItemText classes={{ primary: classes.buttontext }} >Partners</ListItemText>
+            </Link>
+            </ListItem>
         </List>
       </div>
       </>
