@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { withStyles } from '@material-ui/core/styles';
-
 import moment from 'moment'
 import Layout from '../components/Layout/Layout';
 import Page from '../components/Page/Page';
@@ -29,7 +28,6 @@ const pageTemplate = (props) => {
     <Layout>
       <div className={classes.root}>
         <Page
-          title={page.title}
           changed={moment(page.changed).format('DD MMMM, YYYY')}
           content={page.relationships.field_section}
           hero={page.relationships.field_header}
@@ -42,8 +40,8 @@ const pageTemplate = (props) => {
 export default withStyles(styles)(pageTemplate);
 
 export const query = graphql `
-  query pageTemplate {
-    nodePage {
+  query pageTemplate($drupal_id: String!) {
+    nodePage(drupal_id: {eq: $drupal_id}) {
     drupal_id
     title
     path {

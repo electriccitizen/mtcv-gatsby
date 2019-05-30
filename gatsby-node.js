@@ -51,10 +51,12 @@ exports.createPages = ({ actions, graphql }) => {
                   drupal_id: node.drupal_id,
                 },
               })
-            })
+            });
 
+        resolve()
 
           })
+
     )
   })
 }

@@ -22,24 +22,29 @@ const styles = theme => ({
 
 function CustomButton(props) {
   const { classes } = props;
+
+  if (props.buttons.map) {
   return (
-    <>
-      <div className={classes.wrapper}>
-    {
-        props.buttons.map((item, key) => {
-            return (
-                <Button variant={item.field_button_style} size={item.field_button_size} color={item.field_button_color} className={classes.button} href={item.field_button_link.uri}>
-                  <OfflineBolt className={classes.rightIcon} />
+      <>
+        <div className={classes.wrapper}>
+          {
+            props.buttons.map((item, key) => {
+              return (
+                <Button variant={item.field_button_style} size={item.field_button_size} color={item.field_button_color}
+                        className={classes.button} >
+                  <OfflineBolt className={classes.rightIcon}/>
                   {item.field_button_text}
                 </Button>
-            );
+              );
 
-        })
-      }
+            })
+          }
 
-      </div>
+        </div>
       </>
   );
+
+  }
 }
 
 export default withStyles(styles)(CustomButton)
