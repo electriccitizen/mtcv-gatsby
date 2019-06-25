@@ -68,13 +68,7 @@ function Header(props) {
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
               <div className={classes.right}>
-                <Hidden smDown>
-                  <Button variant="contained" size="small" color="primary" className={classes.button}>
-                    <SearchIcon className={classes.rightIcon} />
-                    Search
-                  </Button>
                   <Escape />
-                </Hidden>
               </div>
             </Grid>
           </Grid>

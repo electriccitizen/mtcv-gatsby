@@ -15,7 +15,7 @@ const styles = ({
   },
   rightIcon: {
     marginRight: 10,
-    color: '#333',
+    color: '#ccc',
   },
   rightIconSmall: {
     color: '#f4f4f4',
@@ -62,7 +62,7 @@ class Escape extends React.Component {
           aria-haspopup="true"
           variant="contained"
           onClick={this.handleClick}
-          color="secondary"
+          color="primary.light"
           size="small"
         >
         <Warning className={classes.rightIcon} />

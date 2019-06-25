@@ -8,7 +8,7 @@ const year = new Date().getFullYear(); // used for copyright date
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    backgroundColor: '#091A29',
+    backgroundColor: theme.palette.primary.main,
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 8,
     color: '#ffffff',
