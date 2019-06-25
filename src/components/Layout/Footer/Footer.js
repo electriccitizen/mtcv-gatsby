@@ -1,12 +1,12 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import LiveChat from '../../../components/LiveChat/LiveChat'
 
 const year = new Date().getFullYear(); // used for copyright date
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   footer: {
     backgroundColor: '#091A29',
     paddingTop: theme.spacing.unit * 2,
@@ -20,12 +20,11 @@ const styles = theme => ({
     textAlign: 'right',
     paddingRight: theme.spacing.unit * 2,
   }
-
-});
+}));
 
 
 function Footer(props) {
-  const { classes } = props;
+  const classes = useStyles();
   return (
     <>
       <LiveChat />
@@ -47,4 +46,4 @@ function Footer(props) {
   );
 }
 
-export default withStyles(styles)(Footer)
+export default Footer;
